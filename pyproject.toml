@@ -1,0 +1,57 @@
+[project]
+name = "language_modeling_is_compression"
+version = "0.0.1"
+description = "Aim to finding the best NN architecture to excel in compression"
+readme = "README.md"
+requires-python = ">=3.10,<4.0"
+license = {text = "Apache-2.0"}
+dependencies = [
+    "absl-py",
+    "chex",
+    "dm-haiku",
+    "dm-tree",
+    "jax[cuda12]",
+    "numpy",
+    "optax",
+    "pillow",
+    "pydub",
+    "tensorflow",
+    "tensorflow_datasets",
+    "tqdm",
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+
+[project.urls]
+repository = "https://github.com/cnm13ryan/language_modeling_is_compression"
+
+[project.scripts]
+language_modeling_is_compression = "language_modeling_is_compression.main:cli"
+
+[tool.pdm]
+[tool.pdm.dev-dependencies]
+dev = [
+    "ruff>=0.6.9",
+]
+test = [
+    "pytest<9.0.0,>=8.3.3",
+    "pytest-mock<4.0.0,>=3.14.0",
+]
+
+[tool.pdm.build]
+includes = [
+    "language_modeling_is_compression",
+]
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pyright]
+reportCallIssue = "none"
